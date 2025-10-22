@@ -1,0 +1,394 @@
+/* ============================================= */
+/* DESIGN SYSTEM - Amazonia Verdejante           */
+/* ============================================= */
+:root {
+  /* Cores */
+  --cor-primaria: #2E7D32; /* Verde Escuro (Floresta) */
+  --cor-secundaria: #4CAF50; /* Verde Médio (Ação) */
+  --cor-acento: #8BC34A; /* Verde Claro (Destaque) */
+  --cor-fundo: #F5F5F5; /* Cinza Claro / Branco Sujo */
+  --cor-texto: #333333; /* Cinza Escuro (Texto Principal) */
+  --cor-texto-claro: #FFFFFF; /* Branco */
+  --cor-sucesso: #4CAF50; /* Verde Sucesso */
+  --cor-aviso: #FFC107; /* Amarelo Aviso */
+  --cor-terra: #A1887F; /* Tom de Terra (Opcional) */
+
+  /* Fontes (Mantidas do original) */
+  --fonte-principal: "Roboto", sans-serif;
+  --fonte-mono: "Roboto Mono", monospace;
+
+  /* Tamanhos de Fonte (Ajustados levemente se necessário) */
+  --tamanho-titulo-1: 2.8rem; 
+  --tamanho-titulo-2: 1.8rem;
+  --tamanho-titulo-3: 1.4rem;
+  --tamanho-texto-grande: 1.1rem;
+  --tamanho-texto-normal: 1rem;
+
+  /* Espaçamentos (Mantidos do original) */
+  --espacamento-xs: 0.5rem; --espacamento-s: 1rem; --espacamento-m: 1.5rem; --espacamento-l: 2rem; --espacamento-xl: 3rem; --espacamento-xxl: 4rem;
+}
+
+/* ============================================= */
+/* RESET BÁSICO E ESTILOS GLOBAIS                */
+/* ============================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--fonte-principal); background-color: var(--cor-fundo); color: var(--cor-texto); line-height: 1.6; }
+a { text-decoration: none; color: var(--cor-secundaria); transition: color 0.3s ease; }
+a:hover { color: var(--cor-acento); }
+ul { list-style: none; }
+img { max-width: 100%; height: auto; display: block; } /* Adicionado height: auto */
+html { scroll-behavior: smooth; }
+
+/* ============================================= */
+/* LAYOUT PRINCIPAL                              */
+/* ============================================= */
+.secao { padding: var(--espacamento-xxl) var(--espacamento-xl); text-align: center; }
+.secao h2 { margin-bottom: var(--espacamento-l); font-size: var(--tamanho-titulo-2); } /* Aumenta margem inferior do H2 */
+.secao-escura { background-color: var(--cor-primaria); color: var(--cor-texto-claro); }
+.secao-escura h2 { color: var(--cor-texto-claro); }
+
+footer {
+  position: relative; color: var(--cor-texto-claro); padding: var(--espacamento-xl);
+  background-color: var(--cor-primaria);
+  /* Background sutil de folhas ou textura de madeira */
+  background-image: url();
+}
+
+.footer-container {
+  max-width: 1200px; margin: 0 auto; display: flex;
+  justify-content: space-between; align-items: flex-start;
+  flex-wrap: wrap; gap: var(--espacamento-l); 
+}
+
+.footer-coluna-contato, .newsletter-form, .links-rapidos {
+  flex: 1; min-width: 280px; 
+}
+
+/* ============================================= */
+/* COMPONENTES REUTILIZÁVEIS                     */
+/* ============================================= */
+
+/* --- Logo --- */
+.logo a { display: flex; align-items: center; gap: var(--espacamento-xs); }
+.logo a span { color: var(--cor-texto-claro); font-size: 1.6rem; /* Ajustado */ font-weight: bold; }
+/* Ajuste para logo no header padrão se necessário */
+.header-padrao .logo a span { color: var(--cor-texto-claro); }
+
+/* --- Logo --- */
+.logo a { 
+  display: flex; 
+  align-items: center; 
+  gap: var(--espacamento-xs); /* Mantém um pequeno espaço entre ícone e texto */
+}
+
+/* ADICIONE ESTA NOVA REGRA ABAIXO */
+.logo .logo-icon {
+  height: 45px; /* Ajuste esta altura conforme necessário */
+  width: auto;  /* Mantém a proporção da imagem */
+}
+
+.logo a span { 
+  color: var(--cor-texto-claro); 
+  font-size: 1.6rem; 
+  font-weight: bold; 
+}
+
+/* Garante que o logo funcione bem no Header Padrão também */
+.header-padrao .logo a span { 
+  color: var(--cor-texto-claro); 
+}
+/* --- Navegação --- */
+.amazonia-nav ul, .header-padrao .header-nav ul { display: flex; gap: var(--espacamento-m); align-items: center; } /* Reduz gap */
+.amazonia-nav a, .header-padrao .header-nav a { color: var(--cor-texto-claro); font-size: var(--tamanho-texto-normal); padding: var(--espacamento-xs) var(--espacamento-s); border-radius: 4px; /* Menos arredondado */ transition: background-color 0.3s ease; }
+.amazonia-nav a:not(.btn-cta):hover, .header-padrao .header-nav a:not(.btn-cta):hover { background-color: rgba(255, 255, 255, 0.1); }
+
+/* --- Botões (Novo Estilo) --- */
+.btn-cta, .btn-principal { 
+  background-color: var(--cor-secundaria); 
+  color: var(--cor-texto-claro); 
+  padding: var(--espacamento-s) var(--espacamento-l); 
+  border-radius: 8px 50px; /* Botões arredondados */
+  font-weight: bold; 
+  font-size: var(--tamanho-texto-normal); /* Ajustado */
+  display: inline-block; border: 2px solid var(--cor-secundaria); /* Adiciona borda */
+  cursor: pointer; transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; text-align: center; 
+}
+.btn-cta:hover, .btn-principal:hover { 
+  background-color: var(--cor-acento); 
+  border-color: var(--cor-acento);
+  color: var(--cor-texto-claro); 
+}
+.btn-outline { 
+  background-color: transparent; 
+  color: var(--cor-texto-claro); 
+  border: 2px solid var(--cor-texto-claro); 
+}
+.btn-outline:hover { 
+  background-color: var(--cor-texto-claro); 
+  color: var(--cor-primaria); /* Cor primária no hover */
+  border-color: var(--cor-texto-claro);
+}
+
+/* --- Container de Cards --- */
+.card-container { display: flex; justify-content: center; gap: var(--espacamento-l); flex-wrap: wrap; margin-top: var(--espacamento-xl); }
+
+/* --- Base dos Cards --- */
+.card { background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra mais suave */ display: flex; flex-direction: column; text-align: center; overflow: hidden; /* Garante que a imagem não vaze */ }
+.card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+
+/* --- Modificadores de Card --- */
+.card--pilar { padding: var(--espacamento-l) var(--espacamento-m); width: 250px; align-items: center; gap: var(--espacamento-s); }
+.pilar-icone { background-color: var(--cor-secundaria); color: var(--cor-texto-claro); width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin-bottom: var(--espacamento-s); } /* Adiciona margem */
+.pilar-icone svg { width: 32px; height: 32px; stroke-width: 1.5; } /* Ajusta stroke */
+.card--pilar h3 { font-size: var(--tamanho-titulo-3); color: var(--cor-primaria); margin-bottom: var(--espacamento-xs); }
+.card--pilar p { font-size: var(--tamanho-texto-normal); line-height: 1.5; }
+
+.card--depoimento { padding: var(--espacamento-l); max-width: 350px; /* Aumentado */ align-items: center; }
+.card--depoimento img { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin: 0 auto var(--espacamento-m); }
+.card--depoimento blockquote { font-style: italic; font-size: var(--tamanho-texto-normal); /* Reduzido */ margin-bottom: var(--espacamento-m); flex-grow: 1; color: #555; } /* Cor mais suave */
+.card--depoimento cite { font-weight: bold; color: var(--cor-primaria); }
+
+.card--noticia, .card--projeto { max-width: 350px; text-align: left; }
+.card--noticia img, .card--projeto img { width: 100%; object-fit: cover; height: 200px; /* Altura fixa */ }
+.card__conteudo { padding: var(--espacamento-m); display: flex; flex-direction: column; flex-grow: 1; }
+.card--noticia h3 { font-size: 1.1rem; } /* Ajustado */
+.card--projeto h3 { font-size: 1.2rem; } /* Ajustado */
+.card--noticia h3, .card--projeto h3 { margin-bottom: var(--espacamento-xs); flex-grow: 1; color: var(--cor-primaria); }
+.card--noticia p { font-size: 0.875rem; color: #666; margin-bottom: var(--espacamento-m); }
+.card--projeto p { line-height: 1.6; margin-bottom: var(--espacamento-l); flex-grow: 1; }
+.card--noticia a, .card--projeto a { font-weight: bold; align-self: flex-start; margin-top: auto; /* Alinha botão no fundo */ }
+
+/* --- Componentes do Footer --- */
+footer address, footer .newsletter-form, footer .links-rapidos { flex: 1; min-width: 280px; }
+footer h2 { font-size: var(--tamanho-titulo-3); margin-bottom: var(--espacamento-m); color: var(--cor-texto-claro); /* Garante cor */ }
+footer p, footer a, footer li { line-height: 1.6; font-size: var(--tamanho-texto-normal); } /* Garante tamanho */
+footer address { font-style: normal; }
+footer .newsletter-form form { max-width: 450px; }
+footer .newsletter-form input { display: block; width: 100%; padding: var(--espacamento-s); margin-bottom: var(--espacamento-s); border: 1px solid rgba(255, 255, 255, 0.2); /* Borda sutil */ border-radius: 4px; color: var(--cor-texto); background-color: #f0f0f0; } /* Fundo claro */
+footer .links-rapidos ul li { margin-bottom: var(--espacamento-xs); }
+footer .links-rapidos a, footer .redes-sociais a { color: var(--cor-texto-claro); transition: opacity 0.3s ease; }
+footer .links-rapidos a:hover, footer .redes-sociais a:hover { opacity: 0.7; }
+.redes-sociais { display: flex; gap: var(--espacamento-m); margin-top: var(--espacamento-m); margin-bottom: var(--espacamento-m); }
+.redes-sociais a { display: flex; align-items: center; justify-content: center; } /* Garante alinhamento */
+.redes-sociais svg { width: 24px; height: 24px; /* Tamanho ajustado */ }
+
+/* ============================================= */
+/* SEÇÕES ESPECÍFICAS                            */
+/* ============================================= */
+
+/* --- Hero Header (index.html) --- */
+.amazonia-header-overlay { 
+  min-height: 90vh; color: var(--cor-texto-claro); padding: var(--espacamento-xl); 
+  /* Substitua pelo URL da sua imagem da Amazônia */
+  background-image: linear-gradient(rgba(13, 54, 15, 0.925), rgba(7, 70, 7, 0.274)), url(../images/floresta.jpg); 
+  background-size: cover; background-position: center; 
+  display: flex; flex-direction: column; 
+}
+.amazonia-topo { display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--espacamento-l); } /* Adiciona margem */
+.amazonia-texto { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; /* Alinha à esquerda */ text-align: left; } /* Alinha texto à esquerda */
+.amazonia-texto .tagline { font-family: var(--fonte-mono); display: block; margin-bottom: var(--espacamento-s); opacity: 0.9; font-size: 0.9rem; } /* Ajusta fonte */
+.amazonia-texto h2 { font-size: var(--tamanho-titulo-1); margin-bottom: var(--espacamento-s); max-width: 700px; line-height: 1.2; } /* Ajusta espaçamento e largura */
+.amazonia-texto .btn-principal { align-self: flex-start; margin-top: var(--espacamento-l); } /* Ajusta margem */
+
+/* --- Header Padrão (páginas internas) --- */
+.header-padrao { background-color: var(--cor-primaria); padding: var(--espacamento-m) var(--espacamento-xl); display: flex; justify-content: space-between; align-items: center; }
+
+/* --- Seções 'Sobre' e 'Missão' --- */
+.secao-sobre { position: relative; overflow: hidden; background-color: #ffffff; } /* Fundo branco */
+.secao-sobre::before { content: '🌳'; /* Ícone de árvore */ position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 25rem; color: var(--cor-secundaria); opacity: 0.05; z-index: 0; }
+.secao-sobre .sobre-conteudo { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
+.secao-sobre p { font-size: var(--tamanho-texto-grande); line-height: 1.8; text-align: justify; margin-bottom: var(--espacamento-m); }
+.secao-sobre blockquote { font-size: 1.3rem; /* Ajustado */ font-weight: bold; color: var(--cor-primaria); border-left: 4px solid var(--cor-secundaria); padding-left: var(--espacamento-m); margin: var(--espacamento-l) 0; font-style: italic; } /* Adiciona itálico */
+.secao-missao { display: flex; align-items: center; gap: var(--espacamento-xxl); background-color: var(--cor-fundo); /* Fundo claro */ text-align: left; }
+.secao-missao .missao-conteudo { flex: 1; }
+.secao-missao h2, .secao-missao p { color: var(--cor-texto); } /* Texto escuro */
+.secao-missao .missao-imagem { 
+  flex: 1; min-height: 450px; border-radius: 8px; 
+  /* Substitua pelo URL da sua imagem de plantio */
+  background-image: url(../images/nossa-missao.png); 
+  background-size: cover; background-position: center; 
+}
+.secao-missao p { font-size: var(--tamanho-texto-grande); line-height: 1.7; text-align: justify; }
+
+/* --- Seção Números --- */
+.secao-numeros { 
+  background-color: var(--cor-primaria); color: var(--cor-texto-claro); 
+  /* Efeito de sobreposição mais suave */
+  /* clip-path: polygon(0 5%, 100% 0, 100% 95%, 0% 100%);  */
+  padding: var(--espacamento-xl); 
+}
+.numeros-container { display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: var(--espacamento-l); max-width: 1000px; margin: 0 auto; } /* Limita largura */
+.numero-item .numero { font-size: var(--tamanho-titulo-1); font-weight: bold; color: var(--cor-texto-claro); /* Branco para destaque */ margin-bottom: var(--espacamento-xs); }
+.numero-item .descricao { font-size: var(--tamanho-texto-normal); opacity: 0.9; }
+
+/* --- Seções CTA --- */
+.secao-cta { color: var(--cor-texto-claro); position: relative; padding: var(--espacamento-xxl) var(--espacamento-xl); }
+.secao-cta .cta-conteudo { max-width: 800px; margin: 0 auto; position: relative; z-index: 2; }
+.secao-cta h2 { font-size: var(--tamanho-titulo-1); color: var(--cor-texto-claro); margin-bottom: var(--espacamento-m); }
+.secao-cta p { font-size: var(--tamanho-texto-grande); line-height: 1.7; margin-bottom: var(--espacamento-l); }
+.cta-voluntario { 
+  background-image: linear-gradient(rgba(46, 125, 50, 0.85), rgba(15, 78, 15, 0.9)), url("https://images.unsplash.com/photo-1618475408888-0f0f4a2b9e1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzEyMHwwfDF8c2VhcmNofDEzfHx2b2x1bnRlZXJzfGVufDB8fHx8MTY4MTgzNDA1NQ&ixlib=rb-4.0.3&q=80&w=1920"); 
+  background-size: cover; background-position: center; 
+}
+.cta-doacao { 
+  background-image: linear-gradient(rgba(76, 175, 80, 0.85), rgba(46, 125, 50, 0.9)), url("https://images.unsplash.com/photo-1476231682828-37e571bc172f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNzEyMHwwfDF8c2VhcmNofDEzfHxhbWF6b24lMjByYWluZm9yZXN0fGVufDB8fHx8MTY4MTgzMjYyOA&ixlib=rb-4.0.3&q=80&w=1920"); 
+  background-size: cover; background-position: center; 
+}
+
+/* --- Formulário de Cadastro --- */
+.secao-introducao-form { 
+  /* Substitua pela URL da sua imagem de fundo suave */
+  background-image: linear-gradient(rgba(46, 125, 50, 0.8), rgba(15, 78, 15, 0.85)), url("../images/cadastro.jpg"); 
+  background-size: cover; background-position: center; 
+  padding: var(--espacamento-xl) var(--espacamento-m); 
+  color: var(--cor-texto-claro); text-align: center; 
+}
+.secao-introducao-form h2, .secao-introducao-form p { color: var(--cor-texto-claro); }
+.secao-introducao-form .introducao-conteudo { max-width: 800px; margin: 0 auto; }
+.titulo-grande { font-size: var(--tamanho-titulo-1); margin-bottom: var(--espacamento-s); }
+.paragrafo-grande { font-size: var(--tamanho-texto-grande); }
+
+/* Corpo do Formulário */
+.secao-formulario { padding: var(--espacamento-xl) var(--espacamento-m); background-color: #ffffff; /* Fundo branco para o form */ }
+.formulario-cadastro { max-width: 700px; margin: 0 auto; background-color: #ffffff; padding: var(--espacamento-l); border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); }
+.formulario-cadastro fieldset { border: none; margin-bottom: var(--espacamento-l); padding: 0; } /* Remove padding padrão */
+.formulario-cadastro legend { font-size: var(--tamanho-titulo-3); font-weight: bold; color: var(--cor-primaria); margin-bottom: var(--espacamento-m); width: 100%; padding-bottom: var(--espacamento-xs); border-bottom: 2px solid var(--cor-fundo); }
+.campo-formulario { margin-bottom: var(--espacamento-m); text-align: left; }
+.campo-formulario label { display: block; margin-bottom: var(--espacamento-xs); font-weight: bold; color: var(--cor-texto); }
+.campo-formulario input { width: 100%; padding: var(--espacamento-s); border: 1px solid #ccc; border-radius: 4px; font-size: var(--tamanho-texto-normal); transition: border-color 0.3s ease, box-shadow 0.3s ease; }
+.campo-formulario input:focus { outline: none; border-color: var(--cor-secundaria); box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.25); } /* Sombra verde */
+.campo-formulario.erro label { color: #d32f2f; } /* Vermelho mais escuro */
+.campo-formulario.erro input { border-color: #d32f2f; background-color: #ffebee; } /* Fundo rosa claro */
+.mensagem-erro { color: #d32f2f; font-size: 0.875rem; margin-top: var(--espacamento-xs); display: block; }
+
+/* ============================================= */
+/* ACESSIBILIDADE E UX                           */
+/* ============================================= */
+.acessibilidade-container { position: fixed; top: 100px; left: 20px; z-index: 999; }
+body:has(.amazonia-header-overlay) .acessibilidade-container { top: 150px; } 
+
+#btn-acessibilidade { background-color: var(--cor-primaria); color: var(--cor-texto-claro); border: none; border-radius: 8px; width: 50px; height: 50px; cursor: pointer; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); display: flex; justify-content: center; align-items: center; transition: background-color 0.3s ease; }
+#btn-acessibilidade:hover { background-color: var(--cor-secundaria); }
+.acessibilidade-menu { display: none; position: absolute; top: 60px; left: 0; background-color: var(--cor-texto-claro); border: 1px solid #ddd; border-radius: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); padding: var(--espacamento-s); width: 200px; }
+.acessibilidade-menu.ativo { display: block; }
+.acessibilidade-menu button { width: 100%; background: none; border: none; text-align: left; padding: var(--espacamento-s); cursor: pointer; border-radius: 4px; color: var(--cor-texto); font-size: 0.9rem; }
+.acessibilidade-menu button:hover { background-color: var(--cor-fundo); }
+
+#btn-voltar-topo { display: none; position: fixed; bottom: 20px; right: 20px; z-index: 998; background-color: var(--cor-secundaria); color: var(--cor-texto-claro); border: none; border-radius: 8px; width: 50px; height: 50px; cursor: pointer; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); justify-content: center; align-items: center; transition: background-color 0.3s ease; }
+#btn-voltar-topo:hover { background-color: var(--cor-acento); }
+#btn-voltar-topo.visivel { display: flex; }
+#btn-voltar-topo svg { stroke: var(--cor-texto-claro); }
+
+/* --- MODO DE ALTO CONTRASTE (Amazonia Verdejante) --- */
+html.alto-contraste {
+  --cor-primaria: #000000; --cor-secundaria: #ffff00; /* Amarelo */ --cor-acento: #00ffff; /* Ciano */ --cor-fundo: #000000; --cor-texto: #ffffff; --cor-texto-claro: #000000; --cor-aviso: #ffff00;
+}
+html.alto-contraste body .secao-formulario { background-color: var(--cor-fundo); color: var(--cor-texto); }
+html.alto-contraste .card, html.alto-contraste .formulario-cadastro { background-color: #1a1a1a; color: #ffffff; border: 1px solid #ffff00; }
+html.alto-contraste .pilar-icone { background-color: transparent; border: 2px solid var(--cor-secundaria); } 
+html.alto-contraste .pilar-icone svg { stroke: var(--cor-secundaria); } 
+html.alto-contraste .formulario-cadastro legend, html.alto-contraste .card--pilar h3, html.alto-contraste .secao-sobre blockquote { color: var(--cor-secundaria); border-left-color: var(--cor-secundaria); }
+html.alto-contraste .amazonia-header-overlay, html.alto-contraste .secao-numeros, html.alto-contraste .cta-voluntario, html.alto-contraste .cta-doacao, html.alto-contraste footer, html.alto-contraste .header-padrao, html.alto-contraste .secao-escura { background-image: none !important; background-color: var(--cor-primaria) !important; color: var(--cor-texto) !important; } 
+html.alto-contraste h1, html.alto-contraste h2, html.alto-contraste h3, html.alto-contraste p, html.alto-contraste span, html.alto-contraste li, html.alto-contraste label, html.alto-contraste blockquote, html.alto-contraste cite, html.alto-contraste address { color: var(--cor-texto) !important; } /* Força texto branco */
+html.alto-contraste .secao-sobre blockquote { color: var(--cor-acento); border-left-color: var(--cor-acento); }
+html.alto-contraste .secao-sobre { background-color: #2a2a2a; } 
+html.alto-contraste .secao-missao { background-color: var(--cor-aviso) !important; } 
+html.alto-contraste .secao-missao h2, html.alto-contraste .secao-missao p { color: var(--cor-texto-claro) !important; } 
+html.alto-contraste a { color: var(--cor-acento); } 
+html.alto-contraste .logo span, html.alto-contraste .amazonia-nav a, html.alto-contraste .header-padrao .header-nav a { color: var(--cor-texto); }
+html.alto-contraste .redes-sociais svg { fill: var(--cor-secundaria); }
+html.alto-contraste .btn-cta, html.alto-contraste .btn-principal { color: var(--cor-texto-claro); background-color: var(--cor-secundaria); border: 2px solid var(--cor-secundaria); }
+html.alto-contraste .btn-cta:hover, html.alto-contraste .btn-principal:hover { background-color: var(--cor-acento); color: var(--cor-texto-claro); border-color: var(--cor-acento); }
+html.alto-contraste .btn-outline { background-color: transparent; border-color: var(--cor-secundaria); color: var(--cor-secundaria); }
+html.alto-contraste .btn-outline:hover { background-color: var(--cor-secundaria); color: var(--cor-texto-claro); border-color: var(--cor-secundaria); }
+html.alto-contraste #btn-acessibilidade, html.alto-contraste #btn-voltar-topo { background-color: var(--cor-secundaria); color: var(--cor-texto-claro); }
+html.alto-contraste #btn-acessibilidade svg, html.alto-contraste #btn-voltar-topo svg { fill: var(--cor-texto-claro); stroke: var(--cor-texto-claro); }
+html.alto-contraste footer h2, html.alto-contraste footer p, html.alto-contraste footer a { color: var(--cor-texto); }
+html.alto-contraste .amazonia-nav a.btn-cta, html.alto-contraste .header-padrao .header-nav a.btn-cta { color: var(--cor-texto-claro); } /* Garante texto preto no botão CTA amarelo */
+html.alto-contraste .formulario-cadastro input { background-color: #333; border-color: #ff0; color: #fff; }
+html.alto-contraste .formulario-cadastro input::placeholder { color: #ccc; }
+html.alto-contraste .campo-formulario.erro input { border-color: #ff0; background-color: #330000; } 
+html.alto-contraste .mensagem-erro { color: var(--cor-secundaria); }
+
+/* --- MODO ESCURO (Amazonia Verdejante) --- */
+html.modo-escuro {
+  --cor-primaria: #1B5E20; /* Verde bem escuro */
+  --cor-secundaria: #388E3C; /* Verde escuro secundário */
+  --cor-acento: #66BB6A; /* Verde claro acento */
+  --cor-fundo: #121212; /* Fundo quase preto */
+  --cor-texto: #E0E0E0; /* Texto claro */
+  --cor-texto-claro: #FFFFFF;
+  --cor-superficie: #1E1E1E; /* Fundo para cards/forms */
+  --cor-borda: #333333; /* Borda sutil */
+}
+html.modo-escuro body .secao-formulario { background-color: var(--cor-fundo); color: var(--cor-texto); }
+html.modo-escuro .card, html.modo-escuro .formulario-cadastro { background-color: var(--cor-superficie); border: 1px solid var(--cor-borda); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
+html.modo-escuro .card--pilar h3, html.modo-escuro .card--noticia h3, html.modo-escuro .card--projeto h3 { color: var(--cor-acento); }
+html.modo-escuro .card--pilar p, html.modo-escuro .card--depoimento blockquote, html.modo-escuro .card--depoimento cite, html.modo-escuro .card--noticia p, html.modo-escuro .card--projeto p { color: #AAAAAA; }
+html.modo-escuro  html.modo-escuro { color: var(--cor-fundo); }
+html.modo-escuro .secao-sobre blockquote { color: var(--cor-acento); border-left-color: var(--cor-acento); }
+html.modo-escuro .secao-sobre { background-color: #2a2a2a; }
+html.modo-escuro .secao-missao { background-color: #2a2a2a; } 
+html.modo-escuro .secao-missao h2 { color: var(--cor-texto); }
+html.modo-escuro .formulario-cadastro legend { color: var(--cor-acento); border-bottom-color: var(--cor-borda); }
+html.modo-escuro .formulario-cadastro input { background-color: #333; border-color: #555; color: #fff; }
+html.modo-escuro .formulario-cadastro input::placeholder { color: #888; }
+html.modo-escuro .formulario-cadastro input:focus { border-color: var(--cor-acento); box-shadow: 0 0 0 3px rgba(102, 187, 106, 0.25); }
+html.modo-escuro .campo-formulario.erro input { background-color: #4d1a20; border-color: #dc3545; }
+html.modo-escuro a { color: var(--cor-acento); }
+html.modo-escuro .card--noticia a, html.modo-escuro .card--projeto a { color: var(--cor-acento); } */
+html.modo-escuro .btn-principal, html.modo-escuro .btn-cta { background-color: var(--cor-secundaria); border-color: var(--cor-secundaria); color: var(--cor-texto-claro); }
+html.modo-escuro .btn-principal:hover, html.modo-escuro .btn-cta:hover { background-color: var(--cor-acento); border-color: var(--cor-acento); color: var(--cor-texto-claro); }
+html.modo-escuro .btn-outline { color: var(--cor-texto-claro); border-color: var(--cor-texto-claro); }
+html.modo-escuro .btn-outline:hover { background-color: var(--cor-texto-claro); color: var(--cor-primaria); border-color: var(--cor-texto-claro); }
+html.modo-escuro footer, html.modo-escuro .header-padrao, html.modo-escuro .secao-escura { background-color: var(--cor-primaria); color: var(--cor-texto-claro); }
+html.modo-escuro footer h2, html.modo-escuro .secao-escura h2 { color: var(--cor-texto-claro); }
+html.modo-escuro footer a, html.modo-escuro .redes-sociais svg { color: var(--cor-texto-claro); fill: currentColor; } 
+html.modo-escuro .acessibilidade-menu { background-color: var(--cor-superficie); border-color: var(--cor-borda); }
+html.modo-escuro .acessibilidade-menu button { color: var(--cor-texto); }
+html.modo-escuro .acessibilidade-menu button:hover { background-color: #333; }
+
+/* ============================================= */
+/* RESPONSIVIDADE                                */
+/* ============================================= */
+.btn-hamburguer { display: none; background-color: transparent; border: none; cursor: pointer; z-index: 1001; }
+.amazonia-topo .btn-hamburguer svg, .header-padrao .btn-hamburguer svg { stroke: var(--cor-texto-claro); }
+
+@media (max-width: 900px) {
+  .btn-hamburguer { display: block; }
+  .amazonia-nav ul, .header-padrao .header-nav ul { display: none; }
+  .amazonia-nav ul.menu-ativo, .header-padrao .header-nav ul.menu-ativo {
+    display: flex; flex-direction: column; position: absolute;
+    top: 0; left: 0; width: 100%; height: 100vh;
+    background-color: var(--cor-primaria);
+    justify-content: center; align-items: center;
+    gap: var(--espacamento-l); z-index: 1000;
+  }
+  .amazonia-nav ul.menu-ativo a, .header-padrao .header-nav ul.menu-ativo a { font-size: var(--tamanho-titulo-3); }
+  .secao { padding: var(--espacamento-xl) var(--espacamento-m); }
+  .amazonia-texto { align-items: center; text-align: center; }
+  .amazonia-texto h2 { font-size: 2.5rem; }
+  .amazonia-texto .btn-principal { align-self: center; }
+  .secao-missao { flex-direction: column; gap: var(--espacamento-l); }
+  .secao-missao .missao-imagem { min-height: 300px; width: 100%; }
+  /* Ajuste Footer Responsivo */
+  .footer-container { 
+      flex-direction: column; 
+      align-items: center; 
+      text-align: center; 
+  }
+  footer address, footer .newsletter-form, footer .links-rapidos { 
+      align-items: center; 
+      width: 100%; 
+      max-width: 450px; 
+  }
+  footer .newsletter-form form { display: flex; flex-direction: column; width: 100%; }
+  .redes-sociais { justify-content: center; }
+  /* Cards Responsivos */
+  .card-container { flex-direction: column; align-items: center; }
+  .card--pilar, .card--depoimento, .card--noticia, .card--projeto { width: 100%; max-width: 450px; }
+  /* Formulário Responsivo */
+  .secao-formulario { padding-left: 0; padding-right: 0; }
+  .formulario-cadastro { box-shadow: none; border-radius: 0; width: 100%; max-width: 100%; }
+  .secao-introducao-form { text-align: center; }
+}
