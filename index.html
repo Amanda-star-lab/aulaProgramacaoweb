@@ -1,11 +1,435 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Amazonia Verdejante - Reflorestando o Futuro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&family=Roboto:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+    <script src="js/theme-loader.min.js"></script>
+  </head>
+  <body>
+    <div class="acessibilidade-container">
+      <button
+        id="btn-acessibilidade"
+        aria-label="Ferramentas de Acessibilidade"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          width="28px"
+          height="28px"
+        >
+          <path
+            d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"
+          />
+        </svg>
+      </button>
+      <div id="menu-acessibilidade" class="acessibilidade-menu">
+        <ul>
+          <li><button>Aumentar Texto</button></li>
+          <li><button>Diminuir Texto</button></li>
+          <li><button>Alto Contraste</button></li>
+          <li><button>Modo Escuro</button></li>
+        </ul>
+      </div>
+    </div>
+
+    <header class="amazonia-header-overlay">
+      <div class="amazonia-topo">
+        <div class="logo">
+          <a
+            href="index.html"
+            aria-label="Página inicial da Amazonia Verdejante"
+          >
+            <img src="images/logo.png" alt="" class="logo-icon" />
+            <span>Amazonia Verdejante</span>
+          </a>
+        </div>
+        <button
+          class="btn-hamburguer"
+          aria-label="Abrir menu"
+          aria-expanded="false"
+          aria-controls="menu-navegacao"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="currentColor"
+            width="32px"
+            height="32px"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </button>
+        <nav class="amazonia-nav">
+          <ul id="menu-navegacao">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="projeto.html">Nossas Ações</a></li>
+            <li><a href="cadastro.html">Participe</a></li>
+            <li><a href="./projeto.html" class="btn-cta">Doe Agora</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="amazonia-texto">
+        <span class="tagline">// PRESERVAR. RESTAURAR. EDUCAR.</span>
+        <h2>Respirando um novo futuro para a Amazônia.</h2>
+        <span class="tagline">Cada árvore conta. Junte-se a nós!</span>
+        <a href="./projeto.html" class="btn-principal">Conheça Nossas Ações</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="secao secao-sobre">
+        <div class="sobre-conteudo">
+          <h2>Sobre Nós</h2>
+          <p>
+            A Amazonia Verdejante nasceu em 2023 da união de biólogos,
+            engenheiros florestais e comunidades locais, movidos por uma paixão
+            em comum:
+          </p>
+          <blockquote>
+            Proteger e restaurar o maior pulmão verde do planeta.
+          </blockquote>
+          <p>
+            Começamos com pequenos projetos de plantio e hoje coordenamos
+            iniciativas de larga escala, integrando tecnologia de monitoramento
+            e o conhecimento ancestral dos povos da floresta para garantir um
+            impacto duradouro.
+          </p>
+        </div>
+      </section>
+
+      <section class="secao secao-missao missao">
+        <div class="missao-conteudo">
+          <h2>Nossa Missão</h2>
+          <p>
+            Combater o desmatamento e promover a restauração ecológica da
+            Amazônia é a essência do nosso trabalho. Acreditamos no poder da
+            ação coletiva e na importância de cada hectare recuperado para a
+            biodiversidade, o clima global e o bem-estar das comunidades que
+            dependem da floresta. Nós atuamos no plantio de espécies nativas, na
+            proteção de áreas vulneráveis e na educação ambiental, criando um
+            ciclo virtuoso de preservação e desenvolvimento sustentável para as
+            futuras gerações.
+          </p>
+        </div>
+        <div class="missao-imagem"></div>
+      </section>
+
+      <section class="secao">
+        <h2>Nossos Ideais</h2>
+        <div class="card-container">
+          <div class="card card--pilar">
+            <div class="pilar-icone">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M11.25 9.75l-3 3m0 0l3 3m-3-3h7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <h3>Restauração</h3>
+            <p>
+              Plantamos árvores nativas em áreas degradadas, recuperando
+              ecossistemas e corredores ecológicos.
+            </p>
+          </div>
+          <div class="card card--pilar">
+            <div class="pilar-icone">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.182 14.818a4.5 4.5 0 01-6.364 0l-4.5-4.5a4.5 4.5 0 116.364-6.364l1.757 1.757m6.364 6.364l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m6.364 6.364L12 12.75"
+                />
+              </svg>
+            </div>
+            <h3>Comunidade</h3>
+            <p>
+              Trabalhamos lado a lado com comunidades locais e indígenas,
+              valorizando seu conhecimento e gerando renda.
+            </p>
+          </div>
+          <div class="card card--pilar">
+            <div class="pilar-icone">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M7.5 7.5h-.75A2.25 2.25 0 004.5 9.75v7.5a2.25 2.25 0 002.25 2.25h7.5a2.25 2.25 0 002.25-2.25v-7.5a2.25 2.25 0 00-2.25-2.25h-.75m-6 3.75l3 3m0 0l3-3m-3 3V1.5m6 9l-3 3m0 0l-3-3m3 3V1.5"
+                />
+              </svg>
+            </div>
+            <h3>Biodiversidade</h3>
+            <p>
+              Monitoramos fauna e flora, protegendo espécies ameaçadas e seus
+              habitats naturais.
+            </p>
+          </div>
+          <div class="card card--pilar">
+            <div class="pilar-icone">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"
+                />
+              </svg>
+            </div>
+            <h3>Educação</h3>
+            <p>
+              Promovemos a conscientização ambiental em escolas e comunidades,
+              inspirando a próxima geração de guardiões da floresta.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="secao secao-numeros">
+        <div class="numeros-container">
+          <div class="numero-item" data-numero="1500">
+            <p class="numero">+0</p>
+            <p class="descricao">Hectares em Restauração</p>
+          </div>
+          <div class="numero-item" data-numero="300">
+            <p class="numero">+0</p>
+            <p class="descricao">Voluntários Ativos</p>
+          </div>
+          <div class="numero-item" data-numero="50000">
+            <p class="numero">+0</p>
+            <p class="descricao">Mudas Plantadas</p>
+          </div>
+        </div>
+      </div>
+
+      <section class="secao">
+        <h2>Vozes da Floresta</h2>
+        <div class="card-container">
+          <div class="card card--depoimento">
+            <img
+              src="https://i.pravatar.cc/150?img=5"
+              alt="Foto de membro da comunidade"
+            />
+            <blockquote>
+              "Ver a floresta voltando onde antes era pasto... isso não tem
+              preço. A Amazonia Verdejante trouxe esperança para nossa
+              comunidade."
+            </blockquote>
+            <cite>- Jaciara, Líder Comunitária</cite>
+          </div>
+          <div class="card card--depoimento">
+            <img
+              src="https://i.pravatar.cc/150?img=7"
+              alt="Foto de voluntário"
+            />
+            <blockquote>
+              "Ser voluntário aqui me conectou com a natureza de uma forma que
+              eu nunca imaginei. É um trabalho duro, mas recompensador."
+            </blockquote>
+            <cite>- Ricardo, Voluntário Urbano</cite>
+          </div>
+          <div class="card card--depoimento">
+            <img
+              src="https://i.pravatar.cc/150?img=8"
+              alt="Foto de pesquisador"
+            />
+            <blockquote>
+              "O monitoramento que fazemos aqui é crucial. Cada nova espécie que
+              registramos é uma vitória para a conservação."
+            </blockquote>
+            <cite>- Dr. Gabriel, Biólogo Parceiro</cite>
+          </div>
+        </div>
+      </section>
+
+      <section class="secao secao-escura">
+        <h2>Últimas Notícias da Floresta</h2>
+        <div class="card-container">
+          <article class="card card--noticia">
+            <img
+              src="./images/card1.jpg"
+              alt="Mudas de árvores sendo plantadas"
+            />
+            <div class="card__conteudo">
+              <h3>Mutirão de Plantio Supera Meta de 10 mil Árvores</h3>
+              <p>15 de Outubro, 2025 | por Equipe Verdejante</p>
+              <a href="#">Leia Mais</a>
+            </div>
+          </article>
+          <article class="card card--noticia">
+            <img
+              src="./images/card2.png"
+              alt="Onça pintada em habitat natural"
+            />
+            <div class="card__conteudo">
+              <h3>
+                Monitoramento por Câmera Registra Família de Onças em Área
+                Restaurada
+              </h3>
+              <p>01 de Outubro, 2025 | por Biólogos Parceiros</p>
+              <a href="#">Leia Mais</a>
+            </div>
+          </article>
+          <article class="card card--noticia">
+            <img
+              src="./images/card3.png"
+              alt="Crianças em atividade de educação ambiental"
+            />
+            <div class="card__conteudo">
+              <h3>
+                Parceria com Escola Leva Educação Ambiental a 200 Crianças
+              </h3>
+              <p>20 de Setembro, 2025 | por Comunicação</p>
+              <a href="#">Leia Mais</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-coluna-contato">
+          <h2>Contato</h2>
+          <address>
+            <p>Sede: Manaus - AM, Brasil</p>
+            <p>Telefone: (92) 9999-0000</p>
+            <p>Email: contato@amazoniaverdejante.org</p>
+            <div class="redes-sociais">
+              <a href="#" aria-label="LinkedIn"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="Instagram"
+                ><svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.012 3.584-.07 4.85c-.148 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.85s.012-3.584.07-4.85c.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.85-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.689-.073-4.948-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="Facebook">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+                  />
+                </svg>
+              </a>
+              <a href="#" aria-label="YouTube">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 4-8 4z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </address>
+        </div>
+        <div class="newsletter-form">
+          <h2>Receba Novidades</h2>
+          <form>
+            <input type="text" placeholder="Seu nome" required />
+            <input type="email" placeholder="Seu e-mail" required />
+            <button type="submit" class="btn-principal">Inscrever</button>
+          </form>
+        </div>
+        <div class="links-rapidos">
+          <h2>Navegue</h2>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="projeto.html">Nossas Ações</a></li>
+            <li><a href="cadastro.html">Participe</a></li>
+            <li><a href="#">Doe Agora</a></li>
+          </ul>
+          <p>&copy; 2025 Amazonia Verdejante</p>
+        </div>
+      </div>
+      <a href="#" id="btn-voltar-topo" aria-label="Voltar ao topo da página">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          width="24px"
+          height="24px"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M4.5 15.75l7.5-7.5 7.5 7.5"
+          />
+        </svg>
+      </a>
+    </footer>
+
+    <script src="https://unpkg.com/imask"></script>
+    <script src="js/script.min.js"></script>
+  </body>
 </html>
